@@ -26,5 +26,4 @@ Toos Used:
 - JavaScript
 - jQuery
 
-Techniques Used:
-- Object-oriented programming
+![Simon Game Screenshot](/images/simon-game.png "Simon Game")
