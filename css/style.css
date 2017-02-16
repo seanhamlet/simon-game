@@ -4,6 +4,11 @@ body {
   text-align: center;
 }
 
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
 h1 {
   margin: -320px;
 }
@@ -26,10 +31,9 @@ path:hover {
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  right: 285px;
-  top: -150px;
+  position: absolute;
+  right: 47.5%;
+  top: 320px;
   width: 60px;
   height: 34px;
 }
@@ -81,4 +85,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+footer {
+  font-family: helvetica, sans-serif;
 }

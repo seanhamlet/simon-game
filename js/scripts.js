@@ -23,22 +23,22 @@ function describeArc(x, y, radius, startAngle, endAngle) {
 }
 
 $(document).ready(function() {
-  
+
   // Initialize game settings
   var gameRunning = false;
   var gameOn = false;
   var gameArray = [];
 
   // Get button variables
-  var arcButtons = $('svg.thing > path');
-  var startButton = $('svg.thing > #start');
-  var strictButton = $('svg.thing > #strict');
-  var strictIndicator = $('svg.thing > #strictInd');
+  var arcButtons = $('svg.game > path');
+  var startButton = $('svg.game > #start');
+  var strictButton = $('svg.game > #strict');
+  var strictIndicator = $('svg.game > #strictInd');
 
   arcButtons.attr('class', 'unclickable');
   startButton.attr('class', 'unclickable');
   strictButton.attr('class', 'unclickable');
-  
+
   // Keep track of how many button have been displayed
   var buttonsDisplayed;
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
       strictIndicator.attr('fill', 'black');
     }
   });
-  
+
   // Turning on/off game (off: all buttons are unclickable)
   $('input').on('click', function() {
     if ($('input').prop('checked')) {
@@ -97,7 +97,7 @@ $(document).ready(function() {
       arcButtons.attr('class', 'unclickable');
       startButton.attr('class', 'unclickable');
       strictButton.attr('class', 'unclickable');
-      
+
       // Update counter display to double-hyphen
       $('#counter').html('--').attr('font-size','4rem').attr('x','174').attr('y','275');
     }
@@ -136,13 +136,13 @@ $(document).ready(function() {
       arcButtons.attr('class', 'clickable');
       console.log(userTurn);
     }
-    
+
     displayButton(gameArray[buttonDisplayed - 1], true);
-    
+
     if (buttonDisplayed === 1) {
       $('#counter').html(('0' + gameArray.length).slice(-2));
     }
-    
+
     buttonDisplayed++;
     console.log(gameArray);
   }
@@ -221,7 +221,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < userArray.length; i++) {
       if (userArray[i] !== gameArray[i]) {
-        
+
         if (strictMode) {
           resetGame();
           displayWrong();
@@ -241,11 +241,11 @@ $(document).ready(function() {
       gameRunning = true;
       updateGameArray();
     }
-    
+
     if (gameRunning && userArray.length === gameArray.length) {
       updateGameArray();
     }
-    
+
   }
 
   // If user wrong, display that they were wrong.
